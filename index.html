@@ -22,6 +22,10 @@
       socket.on("connect", () => {
         $events.appendChild(newItem("connect"));
       });
+
+      socket.on("hello", (counter) => {
+        $events.appendChild(newItem(`hello - ${counter}`));
+      });
     </script>
   </body>
 </html>
