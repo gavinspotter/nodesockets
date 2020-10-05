@@ -11,6 +11,10 @@ const io = require("socket.io")(httpServer);
 
 io.on("connect", (socket) => {
   console.log("connect");
+  let counter = 0;
+  setInterval(() => {
+    socket.emit("hello", ++counter);
+  }, 1000);
 });
 
 httpServer.listen(3000, () => {
